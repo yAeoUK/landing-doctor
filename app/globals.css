@@ -146,3 +146,92 @@ body {
 [lang="ar"] h6 {
   font-weight: 700;
 }
+
+/* Extra small screens breakpoint */
+@media (min-width: 475px) {
+  .xs\:inline {
+    display: inline;
+  }
+  .xs\:hidden {
+    display: none;
+  }
+}
+
+/* Mobile header optimizations */
+@media (max-width: 1023px) {
+  /* Ensure header doesn't get too cramped */
+  .container {
+    min-width: 0;
+  }
+
+  /* Prevent text overflow in mobile header */
+  header h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Very small screens (320px and up) */
+@media (max-width: 374px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Make language switcher even more compact on very small screens */
+  .language-switcher-compact {
+    min-width: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Improve mobile menu animations */
+@media (max-width: 1023px) {
+  .mobile-menu-enter {
+    animation: slideDown 0.2s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* RTL improvements for mobile */
+[dir="rtl"] .mobile-menu-item {
+  text-align: right;
+}
+
+/* Ensure proper touch targets on mobile */
+@media (max-width: 1023px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Exception for compact elements */
+  .compact-touch-target {
+    min-height: 32px;
+    min-width: 32px;
+  }
+}
+
+/* Mobile-specific spacing adjustments */
+@media (max-width: 640px) {
+  .mobile-contact-item {
+    padding: 0.75rem;
+  }
+
+  .mobile-contact-item:active {
+    background-color: #f3f4f6;
+  }
+}
